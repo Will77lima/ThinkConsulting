@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/img/logo.png" type="favicon" />
+    <title>Home | Think Consulting</title>
+</head>
+<body>
+    <div class="container">
+        <div class="popup" id="popup">
+            <button type="submit" class="close-popup-button" onclick="handlepopup(false)">&times;</button>
+            <div class="form">
+                <h2>Login</h2>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="usuario" placeholder="Insira seu usuario">
+                </div>
+                <div class="form-element">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Insira sua senha">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember me">
+                    <label for="remember-me">Lembrar-me</label>
+                </div>
+                <div class="form-element">
+                    <button>ENTRAR</button>
+                </div>
+                <div class="form-element">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header> <!-- Inicio do header -->
+        <nav class="nav-bar"> <!-- Inicio da Nav-bar -->
+            <div class="logo"> <!-- Inicio da logo -->
+                <img src="/assets/img/logo.png"> <!-- Imagem da logo -->
+            </div> <!-- Fim da Logo -->
+            <div class="nav-list"> <!-- Inicio do menu -->
+                <ul>
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Think</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Contatos</a></li>
+                    <button class="login-button" type="submit" onclick="handlepopup(true)">Area do Cliente</button>
+                </ul>
+            </div> <!-- Fim do Menu -->
+            
+            <div class="mobile-menu-icon"> <!-- Inicio Botão menu -->
+                <button onclick="menuShow()"><img class="icon" src="/assets/img/menu.png" alt="menu responsivo"></button>
+            </div> <!-- Fim do Botão menu -->
+        </nav> <!-- Fim do Nav-bar -->
+
+        <div class="menu-mobile"> <!--Inicio Menu Mobile-->
+            <ul>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Think</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Contatos</a></li>
+                <button class="login-button" type="submit" onclick="handlepopup(true)">Area do Cliente</button>
+            </ul>
+        </div> <!--Fim Menu Mobile-->
+        <!---------- INICIO DO TESTE POPUP------------>
+        
+        <!---------- FIM DO TESTE POPUP------------>
+    </header><!--Fim do header-->
+
+</body>
+
+<!--AREA RESEVADA PARA JAVA SCRIPT-->
+
+<!--INICIO AREA POPUP PAGINA DE LOGIN-->
+<script>
+    const popup = document.getElementById('popup')
+    function handlepopup(open){
+        popup.classList[open ? 'add' : 'remove']('opened');
+    };
+</script>
+<!-- FIM AREA POPUP PAGINA DE LOGIN-->
+
+<!-- INICIO AREA MENU RESPONSIVO-->
+<script>
+        function menuShow(){
+    let menuMobile = document.querySelector('.menu-mobile');
+    if (menuMobile.classList.contains('open')){
+       menuMobile.classList.remove('open');
+       document.querySelector('.icon').src = "assets/img/menu.png"
+    } else{
+        menuMobile.classList.add('open');
+        document.querySelector('.icon').src = "assets/img/close.png"
+    }
+};
+</script>
+<!-- FIM AREA MENU RESPONSIVO-->
+<!--AREA RESEVADA PARA JAVA SCRIPT-->
+</html>
